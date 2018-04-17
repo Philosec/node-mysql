@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/Philosec/node-mysql#readme",
   "dependencies": {
+    "as-table": "^1.0.31",
     "dotenv": "^5.0.1",
     "inquirer": "^5.2.0",
     "promise-mysql": "^3.2.1"
