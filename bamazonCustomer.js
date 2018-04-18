@@ -16,6 +16,7 @@ mysql.createConnection({
 }).then(conn => {
   connection = conn;
   showAllProducts().then(result => {
+    console.log("")
     console.logAsTable(result)
     conn.end()
   })
@@ -23,7 +24,8 @@ mysql.createConnection({
 
 let showAllProducts = () => {
   return new Promise((resolve, reject) => {
-    connection.query('SELECT * FROM products')
+    let query = `SELECT a.item_id ID, a.product_name Name, a.price Price FROM products a`
+    connection.query(query)
       .then(result => {
         resolve(result)
       })
@@ -32,4 +34,3 @@ let showAllProducts = () => {
       })
   })
 }
-
