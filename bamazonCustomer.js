@@ -2,7 +2,7 @@
 
 let mysql = require('promise-mysql');
 let inquirer = require('inquirer');
-let asTable = require('as-table')
+let utils = require('./utils.js')
 let keys = require('./keys.js');
 
 let connection = {}
@@ -15,16 +15,21 @@ mysql.createConnection({
   database: 'bamazon'
 }).then(conn => {
   connection = conn;
-  showAllProducts()
+  showAllProducts().then(result => {
+    console.logAsTable(result)
+    conn.end()
+  })
 })
 
 let showAllProducts = () => {
-  connection.query('SELECT * FROM products')
-    .then(result => {
-      console.log(asTable.configure({delimiter: ' | ', right:true})(result))
-      connection.end()
-    })
-    .catch(err => {
-      console.log(err)
-    })
+  return new Promise((resolve, reject) => {
+    connection.query('SELECT * FROM products')
+      .then(result => {
+        resolve(result)
+      })
+      .catch(err => {
+        reject(err)
+      })
+  })
 }
+
