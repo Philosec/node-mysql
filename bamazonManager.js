@@ -24,11 +24,13 @@ let run = () => {
     'View Products for Sale',
     'View Low Inventory',
     'Add to Inventory',
-    'Add New Product'
+    'Add New Product',
+    'Exit'
   ]
 
   console.log('')
 
+  let query = ''
   inquirer.prompt({
     name: 'action',
     type: 'rawlist',
@@ -37,10 +39,13 @@ let run = () => {
   }).then(answer => {
     switch (answer.action) {
       case actions[0]:
-        displayAllProducts().then(() => run())
+        query = `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p`
+        console.log(query)
+        displayQueryAsTable(query).then(() => run())
         break
       case actions[1]:
-        //do something
+        query = `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p WHERE p.stock_qty < 5`
+        displayQueryAsTable(query).then(() => run())
         break
       case actions[2]:
         //do something
@@ -48,13 +53,16 @@ let run = () => {
       case actions[3]:
         //do something
         break
+      case actions[4]:
+        connection.end()
+        process.exit()
+        break
     }
   })
 }
 
-let displayAllProducts = () => {
+let displayQueryAsTable = query => {
   return new Promise((resolve, reject) => {
-    let query = `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p`
     connection.query(query).then(result => {
       console.log('')
       console.logAsTable(result)
