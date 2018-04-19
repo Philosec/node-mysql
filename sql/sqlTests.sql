@@ -1,6 +1,6 @@
 USE bamazon;
 
-SELECT a.item_id ID, a.product_name Name, a.price Price FROM products a;
+SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p;
 
 SELECT a.item_id ID, a.product_name Name, a.price Price, a.stock_qty Qty FROM products a;
 

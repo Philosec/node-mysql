@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4b0f4a40-d722-472c-bde0-073b181aa310" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/bamazonCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/bamazonCustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/sqlTests.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/sqlTests.sql" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -53,11 +54,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
-      <file leaf-file-name="bamazonCustomer.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="bamazonCustomer.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bamazonCustomer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="663">
-              <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+            <state relative-caret-position="136">
+              <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bamazonManager.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/bamazonManager.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="646">
+              <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -65,8 +75,8 @@
       <file leaf-file-name="sqlTests.sql" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sql/sqlTests.sql">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+            <state relative-caret-position="34">
+              <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="93" />
             </state>
           </provider>
         </entry>
@@ -100,8 +110,9 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/keys.js" />
         <option value="$PROJECT_DIR$/utils.js" />
-        <option value="$PROJECT_DIR$/sql/sqlTests.sql" />
         <option value="$PROJECT_DIR$/bamazonCustomer.js" />
+        <option value="$PROJECT_DIR$/sql/sqlTests.sql" />
+        <option value="$PROJECT_DIR$/bamazonManager.js" />
       </list>
     </option>
   </component>
@@ -193,12 +204,14 @@
       <workItem from="1523855984240" duration="928000" />
       <workItem from="1523857008175" duration="1912000" />
       <workItem from="1523985043771" duration="3159000" />
-      <workItem from="1524066568740" duration="6620000" />
+      <workItem from="1524066568740" duration="6848000" />
+      <workItem from="1524084162928" duration="608000" />
+      <workItem from="1524169310419" duration="962000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15501000" />
+    <option name="totallyTimeSpent" value="17299000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
@@ -226,10 +239,10 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="DB Browser" order="2" />
       <window_info id="Project Explorer" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
       <window_info id="Job Explorer" order="2" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -239,6 +252,34 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/bamazonCustomer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/sqlTests.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bamazonCustomer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/sqlTests.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bamazonCustomer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -383,15 +424,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sql/sqlTests.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="27" lean-forward="true" selection-start-line="8" selection-start-column="27" selection-end-line="8" selection-end-column="27" />
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" selection-end-column="93" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bamazonCustomer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="45" column="20" selection-start-line="45" selection-start-column="20" selection-end-line="45" selection-end-column="20" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bamazonManager.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="38" column="22" selection-start-line="38" selection-start-column="22" selection-end-line="38" selection-end-column="22" />
         </state>
       </provider>
     </entry>
