@@ -2,6 +2,8 @@ USE bamazon;
 
 SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p;
 
+SELECT p.* FROM products p;
+
 SELECT a.item_id ID, a.product_name Name, a.price Price, a.stock_qty Qty FROM products a;
 
 SELECT p.product_name, p.stock_qty FROM products p WHERE p.product_name LIKE '%Chips%';
@@ -11,3 +13,6 @@ UPDATE products SET stock_qty = 4 WHERE product_name LIKE '%Chips%';
 SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p WHERE p.stock_qty < 5;
 
 UPDATE products SET stock_qty = stock_qty + ? WHERE item_id = ?;
+
+INSERT INTO products (product_name, department_name, price, stock_qty)
+VALUES ('Chips', 'Grocery', 2.20, 12);

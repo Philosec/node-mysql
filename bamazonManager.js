@@ -21,39 +21,75 @@ mysql.createConnection({
 
 const questionBank = {
   menu: {
-    question: {
-      name: 'action',
-      type: 'rawlist',
-      message: 'What would you like to do?',
-      choices: [
-        'View Products for Sale',
-        'View Low Inventory',
-        'Add to Inventory',
-        'Add New Product',
-        'Exit'
-      ]
-    }
-  },
-  addItem: {
-    questions: [
-      {
-        name: 'id',
-        type: 'input',
-        message: 'What product id would you like to increase inventory for?',
-        validate: value => {
-          return isNaN(value) === false
-        }
-      },
-      {
-        name: 'amount',
-        type: 'input',
-        message: 'How many would you like to add?',
-        validate: value => {
-          return isNaN(value) === false
-        }
-      }
+    name: 'action',
+    type: 'rawlist',
+    message: 'What would you like to do?',
+    choices: [
+      'View Products for Sale',
+      'View Low Inventory',
+      'Increase Product Inventory',
+      'Add New Product',
+      'Exit'
     ]
-  }
+  },
+  increaseItemInv: [
+    {
+      name: 'id',
+      type: 'input',
+      message: 'What product id would you like to increase inventory for?',
+      validate: value => {
+        return isNaN(value) === false
+      }
+    },
+    {
+      name: 'amount',
+      type: 'input',
+      message: 'How many would you like to add?',
+      validate: value => {
+        return isNaN(value) === false
+      }
+    }
+  ],
+  addNewItem: [
+    {
+      name: 'name',
+      type: 'input',
+      message: 'What is the items name?'
+    },
+    {
+      name: 'dept',
+      type: 'rawlist',
+      message: 'What department is the item located in?',
+      choices: [
+        'Grocery',
+        'Automotive',
+        'Electronics & Office',
+        'Clothing & Shoes',
+        'Home, Furniture & Appliances',
+        'Home Improvement',
+        `Baby & Toddler`,
+        `Toys & Games`,
+        `Sport & Fitness`,
+        `Sewing & Crafts`,
+      ]
+    },
+    {
+      name: 'price',
+      type: 'input',
+      message: 'What is the price of the product?',
+      validate: value => {
+        return isNaN(value) === false
+      }
+    },
+    {
+      name: 'amt',
+      type: 'input',
+      message: 'What is the initial stock quantity?',
+      validate: value => {
+        return isNaN(value) === false
+      }
+    }
+  ]
 }
 
 const queries = {
@@ -64,21 +100,21 @@ const queries = {
 let runMenu = () => {
   console.log('')
 
-  inquirer.prompt(questionBank.menu.question).then(answer => {
+  inquirer.prompt(questionBank.menu).then(answer => {
     switch (answer.action) {
-      case questionBank.menu.question.choices[0]:
+      case questionBank.menu.choices[0]:
         displayQueryAsTable(queries.allInvQuery).then(() => runMenu()).catch(err => console.log(err))
         break
-      case questionBank.menu.question.choices[1]:
+      case questionBank.menu.choices[1]:
         displayQueryAsTable(queries.lowInvQuery).then(() => runMenu()).catch(err => console.log(err))
         break
-      case questionBank.menu.question.choices[2]:
+      case questionBank.menu.choices[2]:
         addInventory()
         break
-      case questionBank.menu.question.choices[3]:
-        //do something
+      case questionBank.menu.choices[3]:
+        addNewProduct()
         break
-      case questionBank.menu.question.choices[4]:
+      case questionBank.menu.choices[4]:
         connection.end()
         process.exit()
         break
@@ -101,7 +137,7 @@ let displayQueryAsTable = query => {
 let addInventory = () => {
   displayQueryAsTable(queries.allInvQuery).then(() => {
     console.log()
-    inquirer.prompt(questionBank.addItem.questions).then(answer => {
+    inquirer.prompt(questionBank.increaseItemInv).then(answer => {
       const id = parseInt(answer.id)
       const amt = parseInt(answer.amount)
       const query = `UPDATE products SET stock_qty = stock_qty + ? WHERE item_id = ?`
@@ -111,5 +147,19 @@ let addInventory = () => {
         console.log(err)
       })
     })
+  }).catch(err => console.log(err))
+}
+
+let addNewProduct = () => {
+  inquirer.prompt(questionBank.addNewItem).then(answer => {
+    const name = answer.name
+    const dept = answer.dept
+    const price = parseFloat(answer.price)
+    const amt = parseInt(answer.amt)
+    const query = `INSERT INTO products (product_name, department_name, price, stock_qty)
+                   VALUES (?, ?, ?, ?)`
+    connection.query(query, [name, dept, price, amt]).then(result => {
+      displayQueryAsTable(queries.allInvQuery).then(() => runMenu()).catch(err => console.log(err))
+    }).catch(err => console.log(err))
   }).catch(err => console.log(err))
 }
