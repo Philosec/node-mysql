@@ -95,8 +95,7 @@ const questionBank = {
 }
 
 const queries = {
-  // allInvQuery: `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p`,
-  allInvQuery: `SELECT p.item_id, p.product_name, p.price, p.stock_qty, d.department_name FROM products p LEFT JOIN departments d ON p.department_id = d.department_id`,
+  allInvQuery: `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p`,
   lowInvQuery: `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p WHERE p.stock_qty < 5`
 }
 

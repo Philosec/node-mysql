@@ -68,8 +68,8 @@ let processOrder = (productId, qtyRequested) => {
     let sQuery = `SELECT p.stock_qty, p.price FROM products p WHERE p.item_id = ?`
     connection.query(sQuery, productId).then(sResult => {
       if (sResult[0].stock_qty >= qtyRequested) {
-        let uQuery = `UPDATE products SET stock_qty = stock_qty - ? WHERE item_id = ?`
-        connection.query(uQuery, [qtyRequested, productId]).then(uResult => {
+        let uQuery = `UPDATE products SET stock_qty = stock_qty - ?, product_sales = product_sales + (price * ?) WHERE item_id = ?`
+        connection.query(uQuery, [qtyRequested, qtyRequested, productId]).then(uResult => {
           let totalPrice = (qtyRequested * sResult[0].price).toFixed(2)
           console.log(`\nProcessed order for a total of $${totalPrice}`)
           resolve()

@@ -14,15 +14,15 @@ CREATE TABLE departments (
 );
 
 INSERT INTO departments (department_name, over_head_costs) VALUES ('Grocery', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Automotive', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Electronics & Office', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Clothing & Shoes', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Home, Furniture & Appliances', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Home Improvement', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Baby & Toddler', 20000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Automotive', 15000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Electronics & Office', 40000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Clothing & Shoes',320000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Home, Furniture & Appliances', 35000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Home Improvement', 18000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Baby & Toddler', 12000.00);
 INSERT INTO departments (department_name, over_head_costs) VALUES ('Toys & Games', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Sport & Fitness', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Sewing & Crafts', 20000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Sport & Fitness', 10000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Sewing & Crafts', 8000.00);
 
 
 # ---------------------------------------------------------------------------
@@ -34,36 +34,37 @@ CREATE TABLE products (
   department_id INT UNSIGNED,
   price DECIMAL(20, 2) NOT NULL,
   stock_qty INT NOT NULL,
+  product_sales DECIMAL(20, 2),
   PRIMARY KEY(item_id),
   FOREIGN KEY(department_id) REFERENCES departments(department_id)
 );
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Chips', 1, 2.20, 12);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Chips', 1, 2.20, 12, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Slippers', 4, 11.50, 2);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Slippers', 4, 11.50, 2, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('TV', 3, 499.99, 3);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('TV', 3, 499.99, 3, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Headphones', 3, 22.99, 10);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Headphones', 3, 22.99, 10, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Ice Cream', 1, 1.99, 25);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Ice Cream', 1, 1.99, 25, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Milk', 1, 3.50, 13);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Milk', 1, 3.50, 13, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Shirt', 4, 8.99, 10);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Shirt', 4, 8.99, 10, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Pants', 4, 10.99, 15);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Pants', 4, 10.99, 15, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('DVD', 3, 21.99, 22);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('DVD', 3, 21.99, 22, 0.00);
 
-INSERT INTO products (product_name, department_id, price, stock_qty)
-VALUES ('Wiper Fluid', 2, 12.99, 14);
+INSERT INTO products (product_name, department_id, price, stock_qty, product_sales)
+VALUES ('Wiper Fluid', 2, 12.99, 14, 0.00);
