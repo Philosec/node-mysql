@@ -19,10 +19,23 @@ mysql.createConnection({
   runMenu()
 })
 
+const departments = [
+  'Grocery',
+  'Automotive',
+  'Electronics & Office',
+  'Clothing & Shoes',
+  'Home, Furniture & Appliances',
+  'Home Improvement',
+  `Baby & Toddler`,
+  `Toys & Games`,
+  `Sport & Fitness`,
+  `Sewing & Crafts`,
+]
+
 const questionBank = {
   menu: {
     name: 'action',
-    type: 'rawlist',
+    type: 'list',
     message: 'What would you like to do?',
     choices: [
       'View Products for Sale',
@@ -58,20 +71,9 @@ const questionBank = {
     },
     {
       name: 'dept',
-      type: 'rawlist',
+      type: 'list',
       message: 'What department is the item located in?',
-      choices: [
-        'Grocery',
-        'Automotive',
-        'Electronics & Office',
-        'Clothing & Shoes',
-        'Home, Furniture & Appliances',
-        'Home Improvement',
-        `Baby & Toddler`,
-        `Toys & Games`,
-        `Sport & Fitness`,
-        `Sewing & Crafts`,
-      ]
+      choices: departments
     },
     {
       name: 'price',
@@ -93,7 +95,8 @@ const questionBank = {
 }
 
 const queries = {
-  allInvQuery: `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p`,
+  // allInvQuery: `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p`,
+  allInvQuery: `SELECT p.item_id, p.product_name, p.price, p.stock_qty, d.department_name FROM products p LEFT JOIN departments d ON p.department_id = d.department_id`,
   lowInvQuery: `SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p WHERE p.stock_qty < 5`
 }
 
@@ -153,12 +156,12 @@ let addInventory = () => {
 let addNewProduct = () => {
   inquirer.prompt(questionBank.addNewItem).then(answer => {
     const name = answer.name
-    const dept = answer.dept
+    const deptId = departments.indexOf(answer.dept) + 1 //add one to index since foreign key is 1 based
     const price = parseFloat(answer.price)
     const amt = parseInt(answer.amt)
-    const query = `INSERT INTO products (product_name, department_name, price, stock_qty)
+    const query = `INSERT INTO products (product_name, department_id, price, stock_qty)
                    VALUES (?, ?, ?, ?)`
-    connection.query(query, [name, dept, price, amt]).then(result => {
+    connection.query(query, [name, deptId, price, amt]).then(result => {
       displayQueryAsTable(queries.allInvQuery).then(() => runMenu()).catch(err => console.log(err))
     }).catch(err => console.log(err))
   }).catch(err => console.log(err))

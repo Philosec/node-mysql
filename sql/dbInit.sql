@@ -7,10 +7,10 @@ USE bamazon;
 # Department Table
 # ---------------------------------------------------------------------------
 CREATE TABLE departments (
-  deptartment_id INT UNSIGNED AUTO_INCREMENT NOT NULL,
+  department_id INT UNSIGNED AUTO_INCREMENT NOT NULL,
   department_name VARCHAR(30) NOT NULL,
   over_head_costs DECIMAL(20, 2) NOT NULL,
-  PRIMARY KEY(deptartment_id)
+  PRIMARY KEY(department_id)
 );
 
 INSERT INTO departments (department_name, over_head_costs) VALUES ('Grocery', 20000.00);
@@ -35,7 +35,7 @@ CREATE TABLE products (
   price DECIMAL(20, 2) NOT NULL,
   stock_qty INT NOT NULL,
   PRIMARY KEY(item_id),
-  FOREIGN KEY(department_id) REFERENCES departments(deptartment_id)
+  FOREIGN KEY(department_id) REFERENCES departments(department_id)
 );
 
 INSERT INTO products (product_name, department_id, price, stock_qty)

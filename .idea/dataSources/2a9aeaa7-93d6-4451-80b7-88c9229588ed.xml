@@ -1101,7 +1101,7 @@
     <view id="291" parent="3" name="VIEWS">
       <System>1</System>
     </view>
-    <column id="292" parent="229" name="deptartment_id">
+    <column id="292" parent="229" name="department_id">
       <Position>1</Position>
       <DataType>int(10) unsigned|0s</DataType>
       <NotNull>1</NotNull>
@@ -1122,7 +1122,7 @@
     </column>
     <key id="295" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>deptartment_id</ColNames>
+      <ColNames>department_id</ColNames>
       <Primary>1</Primary>
     </key>
     <column id="296" parent="230" name="item_id">
@@ -1168,7 +1168,7 @@
       <ColNames>department_id</ColNames>
       <RefSchemaName>bamazon</RefSchemaName>
       <RefTableName>departments</RefTableName>
-      <RefColNames>deptartment_id</RefColNames>
+      <RefColNames>department_id</RefColNames>
     </foreign-key>
     <column id="304" parent="231" name="CHARACTER_SET_NAME">
       <Position>1</Position>
