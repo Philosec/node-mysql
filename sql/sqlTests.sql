@@ -2,7 +2,7 @@ USE bamazon;
 
 SELECT p.item_id ID, p.product_name Name, p.price Price, p.stock_qty Quantity FROM products p;
 
-SELECT p.* FROM products p;
+SELECT p.item_id, p.product_name, p.price, d.department_name FROM products p LEFT JOIN departments d ON p.department_id = d.deptartment_id;
 
 SELECT a.item_id ID, a.product_name Name, a.price Price, a.stock_qty Qty FROM products a;
 
