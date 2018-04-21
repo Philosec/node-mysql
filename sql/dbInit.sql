@@ -13,16 +13,16 @@ CREATE TABLE departments (
   PRIMARY KEY(department_id)
 );
 
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Grocery', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Automotive', 15000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Electronics & Office', 40000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Clothing & Shoes',320000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Home, Furniture & Appliances', 35000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Home Improvement', 18000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Baby & Toddler', 12000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Toys & Games', 20000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Sport & Fitness', 10000.00);
-INSERT INTO departments (department_name, over_head_costs) VALUES ('Sewing & Crafts', 8000.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Grocery', 200.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Automotive', 1500.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Electronics & Office', 400.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Clothing & Shoes', 320.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Home, Furniture & Appliances', 350.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Home Improvement', 180.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Baby & Toddler', 120.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Toys & Games', 200.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Sport & Fitness', 100.00);
+INSERT INTO departments (department_name, over_head_costs) VALUES ('Sewing & Crafts', 80.00);
 
 
 # ---------------------------------------------------------------------------
