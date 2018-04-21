@@ -16,5 +16,7 @@ UPDATE products SET stock_qty = stock_qty + ? WHERE item_id = ?;
 
 UPDATE products SET stock_qty = stock_qty - ?, product_sales = product_sales + (price * ?) WHERE item_id = ?;
 
+SELECT d.department_id, d.department_name FROM departments d ORDER BY d.department_id;
+
 INSERT INTO products (product_name, department_id, price, stock_qty)
 VALUES ('Chips', 1, 2.20, 12);

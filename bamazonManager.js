@@ -5,6 +5,7 @@ require('./utils')
 let mysql = require('promise-mysql')
 let inquirer = require('inquirer')
 let keys = require('./keys.js')
+let g = require('./globals.js')
 
 let connection = {}
 
@@ -16,7 +17,8 @@ mysql.createConnection({
   database: 'bamazon'
 }).then(conn => {
   connection = conn
-  runMenu()
+  // runMenu()
+  g.departments.update(conn)
 })
 
 const departments = [
